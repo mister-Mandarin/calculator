@@ -1,0 +1,142 @@
+/* Обнуление */
+* {
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+}
+
+*::before,
+*,
+*::after {
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    overflow-x: hidden;
+
+    height: 100%;
+
+    background: linear-gradient(180deg, #862652,#f37330);
+
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+
+    /* убираем горизонтальный скролл */
+}
+
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+
+    border: 0;
+}
+
+a,
+a:visited,
+a:hover {
+    cursor: pointer; /* Установка курсора указателя на ссылке */
+    text-decoration: none; /* Убирает стандартное подчеркивание ссылки */
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+/* -------------------- */
+
+.grid-container {
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    justify-content: center;
+}
+
+.grid-container > button {
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    text-transform: uppercase;
+    background-color: rgba(255,255,255,0.75);
+}
+
+.grid-container > button:hover,
+.grid-container > button:focus {
+    background-color: rgba(255,255,255,0.9);
+}
+
+.big {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+    /*браузер будет принудительно переносить слова, даже если они не помещаются в текущую строку.*/
+    word-break: break-all;
+    /*браузер будет переносить слова, если они не помещаются, при этом все символы слова будут сохранены.*/
+    word-wrap: break-word;
+}
+
+.last-operand {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.current-operand {
+    color: white;
+    font-size: 2rem;
+}
